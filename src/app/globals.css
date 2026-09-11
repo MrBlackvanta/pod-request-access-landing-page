@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@source not "../../*.md";
+
+@theme {
+  --font-sans: var(--font-chivo), ui-sans-serif, system-ui, sans-serif;
+
+  --color-page: #121725;
+  --color-green: #54e6af;
+}
