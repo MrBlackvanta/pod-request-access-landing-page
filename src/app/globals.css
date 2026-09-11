@@ -33,7 +33,8 @@
   --text-note--font-weight: 700;
 
   --shadow-cta: 0 2px 4px #54e6af24;
-  --shadow-field-focus: 0 0 8px #54e6afbf, 0 0 28px #54e6af59;
+  --shadow-field-focus: 0 0 8px 2px #54e6afcc, 0 0 28px #54e6af59;
+  --shadow-field-error: 0 0 8px 2px #ff8181, 0 0 28px #ff818173;
 }
 
 @utility v-dot-grid {
@@ -43,4 +44,8 @@
     #0000 0
   );
   background-size: 2rem 2rem;
+}
+
+@utility v-focus {
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
 }

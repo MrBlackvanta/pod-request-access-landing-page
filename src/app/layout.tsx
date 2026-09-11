@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Chivo } from "next/font/google";
+import { Footer } from "@/components/layout";
 import "./globals.css";
 
 const SITE_URL =
@@ -58,7 +59,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${chivo.variable} antialiased`}>
-      <body className="bg-page text-white">{children}</body>
+      <body className="bg-page relative text-white">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

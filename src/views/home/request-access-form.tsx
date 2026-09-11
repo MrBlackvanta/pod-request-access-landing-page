@@ -50,11 +50,11 @@ export default function RequestAccessForm() {
             onChange={(event) => setEmail(event.target.value)}
             aria-invalid={invalid}
             aria-describedby={invalid ? errorId : undefined}
-            className="text-control bg-field caret-green aria-invalid:inset-ring-error focus-visible:bg-field-focus focus-visible:shadow-field-focus h-11 w-full rounded-full px-8 text-white placeholder:text-white/57 focus-visible:outline-2 focus-visible:outline-transparent aria-invalid:inset-ring-2 motion-safe:transition-[background-color,box-shadow] md:h-13 md:pr-44 md:pl-7"
+            className="text-control bg-field caret-green aria-invalid:inset-ring-error focus-visible:bg-field-focus focus-visible:shadow-field-focus aria-invalid:focus-visible:shadow-field-error h-11 w-full rounded-full px-8 text-white placeholder:text-white/57 focus-visible:outline-2 focus-visible:outline-transparent aria-invalid:inset-ring-2 motion-safe:transition-[background-color,box-shadow] md:h-13 md:pr-44 md:pl-7"
           />
           <button
             type="submit"
-            className="text-control bg-green text-page shadow-cta hover:bg-green-hover h-11 w-full cursor-pointer rounded-full text-center transition-[background-color] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:translate-y-px active:shadow-none md:absolute md:top-1 md:right-1 md:w-43"
+            className="text-control bg-green text-page shadow-cta hover:bg-green-hover v-focus h-11 w-full cursor-pointer rounded-full text-center transition-[background-color] active:translate-y-px active:shadow-none md:absolute md:top-1 md:right-1 md:w-43"
           >
             Request Access
           </button>
