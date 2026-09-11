@@ -1,3 +1,4 @@
+import PlatformLogos from "./platform-logos";
 import RequestAccessForm from "./request-access-form";
 
 export default function Hero() {
@@ -12,6 +13,7 @@ export default function Hero() {
         distribute your podcast to Spotify, Apple Podcasts, Google Podcasts,
         Pocket Casts and more!
       </p>
+      <PlatformLogos />
       <RequestAccessForm />
     </main>
   );

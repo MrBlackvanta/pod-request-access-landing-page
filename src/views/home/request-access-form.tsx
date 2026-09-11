@@ -50,7 +50,7 @@ export default function RequestAccessForm() {
             onChange={(event) => setEmail(event.target.value)}
             aria-invalid={invalid}
             aria-describedby={invalid ? errorId : undefined}
-            className="text-control bg-field aria-invalid:inset-ring-error h-11 w-full rounded-full px-8 text-white placeholder:text-white/52 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-invalid:inset-ring-2 md:h-13 md:pr-44 md:pl-7"
+            className="text-control bg-field aria-invalid:inset-ring-error focus-visible:bg-field-focus h-11 w-full rounded-full px-8 text-white placeholder:text-white/57 focus-visible:outline-2 focus-visible:outline-transparent aria-invalid:inset-ring-2 motion-safe:transition-colors md:h-13 md:pr-44 md:pl-7"
           />
           <button
             type="submit"

@@ -58,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${chivo.variable} antialiased`}>
-      <body className="bg-page">{children}</body>
+      <body className="bg-page text-white">{children}</body>
     </html>
   );
 }
