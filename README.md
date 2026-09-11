@@ -13,7 +13,6 @@ My solution to the [Pod request access landing page](https://www.frontendmentor.
 - React
 - TypeScript
 - Tailwind CSS
-- Cloudflare Workers
 
 ## Author
 

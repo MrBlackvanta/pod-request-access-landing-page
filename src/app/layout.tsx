@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Chivo } from "next/font/google";
+import { SITE_URL } from "@/app/site";
 import { Footer } from "@/components/layout";
 import "./globals.css";
-
-const SITE_URL =
-  "https://pod-request-access-landing-page.abdelrhman-ahmed8881.workers.dev";
 
 const name = "pod";
 const title = `${name} | Publish your podcasts everywhere`;
