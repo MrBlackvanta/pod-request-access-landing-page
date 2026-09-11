@@ -11,7 +11,7 @@
   --color-partner: #5a668a;
   --color-green: #54e6af;
   --color-green-hover: #aaf3d7;
-  --color-error: #fb4e4e;
+  --color-error: #ff5252;
 
   --text-display: 2rem;
   --text-display--line-height: 2.4rem;
@@ -33,4 +33,14 @@
   --text-note--font-weight: 700;
 
   --shadow-cta: 0 2px 4px #54e6af24;
+  --shadow-field-focus: 0 0 8px #54e6afbf, 0 0 28px #54e6af59;
+}
+
+@utility v-dot-grid {
+  background-image: radial-gradient(
+    circle at 0.25rem 0.25rem,
+    currentColor 0.25rem,
+    #0000 0
+  );
+  background-size: 2rem 2rem;
 }
