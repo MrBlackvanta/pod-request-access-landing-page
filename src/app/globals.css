@@ -39,31 +39,8 @@
   --animate-note-in: note-in 220ms ease-out;
   --animate-note-in-out: note-in-out 3s ease-out;
 
-  @-webkit-keyframes note-in {
-    from {
-      opacity: 0;
-      translate: -0.75rem 0;
-    }
-  }
-
   @keyframes note-in {
     from {
-      opacity: 0;
-      translate: -0.75rem 0;
-    }
-  }
-
-  @-webkit-keyframes note-in-out {
-    0% {
-      opacity: 0;
-      translate: -0.75rem 0;
-    }
-    8%,
-    90% {
-      opacity: 1;
-      translate: none;
-    }
-    100% {
       opacity: 0;
       translate: -0.75rem 0;
     }
