@@ -3,35 +3,40 @@
 import { useEffect, useId, useRef, useState, type SubmitEvent } from "react";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const CONFIRMATION_MS = 3000;
+const CONFIRMATION_MS = 2800;
 
 export default function RequestAccessForm() {
   const emailId = useId();
   const errorId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const [email, setEmail] = useState("");
-  const [attempts, setAttempts] = useState(0);
-  const [sentAt, setSentAt] = useState(0);
+  const [showErrors, setShowErrors] = useState(false);
+  const [errorKey, setErrorKey] = useState(0);
+  const [sentKey, setSentKey] = useState(0);
+  const [sent, setSent] = useState(false);
 
   const valid = EMAIL.test(email.trim());
-  const invalid = attempts > 0 && !valid;
+  const invalid = showErrors && !valid;
 
   useEffect(() => {
-    if (!sentAt) return;
-    const timer = setTimeout(() => setSentAt(0), CONFIRMATION_MS);
+    if (!sentKey) return;
+    const timer = setTimeout(() => setSent(false), CONFIRMATION_MS);
     return () => clearTimeout(timer);
-  }, [sentAt]);
+  }, [sentKey]);
 
   function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!valid) {
-      setAttempts((count) => count + 1);
+      setShowErrors(true);
+      setErrorKey((key) => key + 1);
+      setSent(false);
       inputRef.current?.focus();
       return;
     }
-    setAttempts(0);
+    setShowErrors(false);
     setEmail("");
-    setSentAt(Date.now());
+    setSentKey((key) => key + 1);
+    setSent(true);
   }
 
   return (
@@ -65,27 +70,25 @@ export default function RequestAccessForm() {
           Request Access
         </button>
       </div>
-      <div className="text-note absolute inset-x-0 top-full mt-2 md:pl-8">
-        <div role="status">
-          {sentAt > 0 && (
-            <p
-              key={sentAt}
-              className="text-green motion-safe:animate-note-in-out"
-            >
-              Thanks! We&rsquo;ll email you when pod opens.
-            </p>
-          )}
-        </div>
-        {invalid && (
+      <div className="text-note absolute inset-x-0 top-full mt-2 grid md:pl-8">
+        <div role="status" className="col-start-1 row-start-1">
           <p
-            key={attempts}
-            id={errorId}
-            role="alert"
-            className="text-error motion-safe:animate-note-in"
+            key={sentKey}
+            data-show={sent || undefined}
+            className="v-note text-green"
           >
-            Oops! Please check your email
+            Thanks! We&rsquo;ll email you when pod opens.
           </p>
-        )}
+        </div>
+        <p
+          key={errorKey}
+          id={errorId}
+          role="alert"
+          data-show={invalid || undefined}
+          className="v-note text-error col-start-1 row-start-1"
+        >
+          Oops! Please check your email
+        </p>
       </div>
     </form>
   );
