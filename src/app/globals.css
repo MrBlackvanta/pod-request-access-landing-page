@@ -5,5 +5,31 @@
   --font-sans: var(--font-chivo), ui-sans-serif, system-ui, sans-serif;
 
   --color-page: #121725;
+  --color-field: #2c344b;
+  --color-copy: #c2cbe5;
+  --color-partner: #5a668a;
   --color-green: #54e6af;
+  --color-green-hover: #aaf3d7;
+  --color-error: #fb4e4e;
+
+  --text-display: 2rem;
+  --text-display--line-height: 2.4rem;
+  --text-display--font-weight: 300;
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 3.6rem;
+  --text-display-lg--font-weight: 300;
+  --text-lead: 0.875rem;
+  --text-lead--line-height: 1.3125rem;
+  --text-lead--font-weight: 300;
+  --text-lead-lg: 1.125rem;
+  --text-lead-lg--line-height: 1.6875rem;
+  --text-lead-lg--font-weight: 300;
+  --text-control: 0.875rem;
+  --text-control--line-height: 1.75rem;
+  --text-control--font-weight: 700;
+  --text-note: 0.75rem;
+  --text-note--line-height: 0.875rem;
+  --text-note--font-weight: 700;
+
+  --shadow-cta: 0 2px 4px #54e6af24;
 }
